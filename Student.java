@@ -1,22 +1,28 @@
-package AccessModifier.StaticMethod;
+package AccessModifier.Student;
 
 public class Student {
-    private int rollno;
     private String name;
-    private static String college = "BBDIT";
-
-    Student(int r, String n) {
-        rollno = r;
-        name = n;
+    private String classes;
+    public Student() {
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getClasses() {
+        return classes;
+    }
+    public void setClasses(String classes) {
+        this.classes = classes;
     }
 
-    static void change() {
-        college = "CODEGYM";
-    }
-
-    void display() {
-        System.out.println(rollno + " " + name + " " + college);
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", classes='" + classes + '\'' +
+                '}';
     }
 }
-
-
