@@ -1,25 +1,41 @@
-package AccessModifier.Circle;
+package KeThua.Circle;
 
 public class Circle {
-    private double radius = 1.0;
-    private String color = "red";
-    final float PI = 3.14f;
+    private double radius;
+    private String color;
+
     public Circle() {
     }
 
-    public Circle (double radius) {
+    public Circle(double radius, String color) {
         this.radius = radius;
+        this.color = color;
     }
 
     public double getRadius() {
         return radius;
     }
 
-    public double getArea() {
-        return radius * radius * PI;
+    public void setRadius(double radius) {
+        this.radius = radius;
     }
 
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public double getArea() {
+        return Math.PI * Math.pow(radius, 2);
+    }
+
+    @Override
     public String toString() {
-        return "\nRadius is: " + getRadius() + "\nArea is: " + getArea();
+        return "\nRadius of Circle = " +
+                radius + "\nColor Of Circle = " + color
+                + "\nArea of Circle = " + getArea();
     }
 }
