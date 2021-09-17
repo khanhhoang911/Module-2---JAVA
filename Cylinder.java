@@ -1,37 +1,20 @@
-package KeThua.Circle;
+package CleanCodeAndRefactoring.Cylinder;
 
-public class Cylinder extends Circle {
-    private double height;
+public class Cylinder {
 
-    public Cylinder(double radius, String color, double height) {
-        super(radius, color);
-        this.height = height;
+    public static double getBaseArea;
+    public static double getPerimeter;
+
+    public static double getVolume(int radius, int height){
+        getBaseArea = Math.PI * radius * radius;
+        double baseArea = getBaseArea;
+        double perimeter = 2 * Math.PI  * radius;
+        getPerimeter = perimeter * height + 2 * baseArea;
+        double volume = getPerimeter;
+        return volume;
     }
 
-    public Cylinder(double height) {
-        super();
-        this.height = height;
-    }
-
-    public Cylinder() {
-        super();
-    }
-
-    public double getHeight() {
-        return height;
-    }
-
-    public void setHeight(double height) {
-        this.height = height;
-    }
-
-    public double getVolume() {
-        return super.getArea() * this.height;
-    }
-
-    @Override
-    public String toString() {
-        return  "\nHeight of Cylinder = " + getHeight()
-                + "\nVolume of Cylinder = " + getVolume();
+    public static void main(String[] args) {
+        System.out.println(getVolume(5, 6));
     }
 }
